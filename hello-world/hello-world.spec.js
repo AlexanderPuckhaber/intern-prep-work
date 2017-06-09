@@ -9,7 +9,11 @@ describe('Hello World', function() {
       expect(helloWorld.hello('')).toEqual('Hello, World!');
     });
 
-  it('should say hello to bob');
+  it('should say hello to bob', function() {
+      expect(helloWorld.hello('bob')).toEqual('Hello, World!')
+  });
 
-  it('should say hello to sally');
+  it('should say hello to sally', function() {
+      expect(helloWorld.hello('sally')).toEqual('Hello, World!')
+  });
 });
