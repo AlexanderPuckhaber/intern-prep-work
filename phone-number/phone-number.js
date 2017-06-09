@@ -14,8 +14,6 @@ function PhoneNumber() {
         alert("Object Created.");
         inputPhoneNumber = newNumber;
     }()
-
-
     
 
     //cleans up inputPhoneNumber by removing all non-digit characters (seperators and such)
