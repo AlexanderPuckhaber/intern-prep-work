@@ -1,9 +1,22 @@
-var PhoneNumber = function(inputPhoneNumber) {
+function PhoneNumber() {
 
+    
     //initializes fields
+    var inputPhoneNumber = "";
     var unformattedNumber = "";
     var areacode = "";
     var formattedNumber = "";
+
+    //constructor. kind of like in python
+    // private constructor https://stackoverflow.com/a/11388974
+    //<is this what constructors are supposed to look like???>
+    var __construct = function (newNumber) {
+        alert("Object Created.");
+        inputPhoneNumber = newNumber;
+    }()
+
+
+    
 
     //cleans up inputPhoneNumber by removing all non-digit characters (seperators and such)
     for (var i = 0; i < inputPhoneNumber.length; i++) {
@@ -57,15 +70,15 @@ var PhoneNumber = function(inputPhoneNumber) {
     }
 
     //functions number(), areaCode(), and toString()
-    function number() {
+    this.number = function () {
         return (unformattedNumber);
-    }
+    };
 
-    function areaCode() {
+    this.areaCode = function () {
         return (areacode);
     }
 
-    function toString() {
+    this.toString = function () {
         return (formattedNumber);
     }
 };
