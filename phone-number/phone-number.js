@@ -1,4 +1,4 @@
-function PhoneNumber(inputPhoneNumber) {
+var PhoneNumber = function(inputPhoneNumber) {
 
     //initializes fields
     var unformattedNumber = "";

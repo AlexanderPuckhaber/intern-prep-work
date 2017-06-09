@@ -68,8 +68,7 @@ describe("phoneNumberConverter", function () {
   });
 
   //PhoneNumber object should retain original phone number input string and store it
-  //Alternatively, if a standard "fancy" phone number format is decided upon, use that instead:
-  //Function should return a string with 3 digit area code surrounded by parenthesis, followed by a space, the next 3 digits, a '-', and the last 4 digits
+  //Function toString() should return a string with 3 digit area code surrounded by parenthesis, followed by a space, the next 3 digits, a '-', and the last 4 digits
   xit("phoneNumberConverter", function () {
     var phone = new PhoneNumber('1234567890');
     expect(phone.toString()).toEqual('(123) 456-7890');
