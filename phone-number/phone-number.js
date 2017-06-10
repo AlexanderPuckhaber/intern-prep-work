@@ -7,14 +7,6 @@ var PhoneNumber = function (newNumber) {
     var areacode;
     var formattedNumber;
 
-    //constructor. kind of like in python
-    // private constructor https://stackoverflow.com/a/11388974
-    //<is this what constructors are supposed to look like???>
-    /*
-    var __construct = function (newNumber) {
-        //inputPhoneNumber = newNumber;
-    }()
-    */
 
     //variable to keep track of how many non-parenthesis separators there are in the string
     //designed to catch "  ", "afaf", and other nonsense such as "&l", but not ") "
@@ -25,8 +17,7 @@ var PhoneNumber = function (newNumber) {
 
         //gets character in inputPhoneNumber
         var tmp = inputPhoneNumber.charAt(i);
-        //print(tmp);
-        //print(parseInt(tmp));
+
         //determines if character is a digit bewteen 0 and 9 inclusive
         if (parseInt(tmp) > -1 && parseInt(tmp) < 10) {
             //reset seperatorCount
@@ -55,8 +46,7 @@ var PhoneNumber = function (newNumber) {
             }
         }
     }
-    //print(unformattedNumber);
-    //print(unformattedNumber.length);
+    
     //checks the length of the phone number to see if it is valid
     //Length needs to be between 10 and 11
     if (unformattedNumber.length > 11 || unformattedNumber.length < 10) {
@@ -115,10 +105,3 @@ var PhoneNumber = function (newNumber) {
 };
 
 module.exports = PhoneNumber;
-
-/*
-phone = new PhoneNumber("8439713620");
-print(phone.areaCode());
-print(phone.number());
-print(phone.toString());
-*/
