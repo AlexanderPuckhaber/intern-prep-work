@@ -13,19 +13,40 @@ describe('Bob', function () {
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  it('should agree with "Sure" when asked a question');
+  it('should agree with "Sure." when asked a question', function(){
+    var result = bob.hey('?????a?????');
+    expect(result).toEqual('Sure.');
+  });
 
-  it('should respond with "Whatever" when merely spoken to assertively');
+  it('should respond with "Whatever." when merely spoken to assertively', function(){
+    var result = bob.hey('I know what is best for you');
+    expect(result).toEqual('Whatever.');
+  });
 
-  it('should respond "Whoa, chill out!" when shouted a question');
+  it('should respond "Whoa, chill out!" when shouted a question', function(){
+    var result = bob.hey('CAN YOU TAKE OUT THE TRASH!?');
+    expect(result).toEqual('Whoa, chill out!');
+  });
 
-  it('should respond "Whoa, chill out!" when shouted at with numbers');
+  it('should respond "Whoa, chill out!" when shouted at with numbers', function(){
+    var result = bob.hey('7381489102734!');
+    expect(result).toEqual('Whoa, chill out!');
+  });
 
-  it('should respond "Whatever" when only spoken to with numbers');
+  it('should respond "Whatever." when only spoken to with numbers', function(){
+    var result = bob.hey('102387410234');
+    expect(result).toEqual('Whatever.');
+  });
 
-  it('should agree when asked a question with numbers');
+  it('should agree when asked a question with numbers', function(){
+    var result = bob.hey('1234709128374?');
+    expect(result).toEqual('Sure.');
+  });
 
-  it('should respond "Whoa, chill out!" when shouted at with symbols');
+  it('should respond "Whoa, chill out!" when shouted at with symbols', function(){
+    var result = bob.hey('%&*($$%^&(!');
+    expect(result).toEqual('Whoa, chill out!');
+  });
 
   /* NOTE: \xc4 = Ä
            \xe4 = ä
@@ -33,19 +54,40 @@ describe('Bob', function () {
            \xfc = ü
      "\xfcML\xe4\xdcTS" === "üMLäÜTS"
   */
-  it('should respond "Whoa, chill out!" when should at with umlauts (unicode)');
+  it('should respond "Whoa, chill out!" when should at with umlauts (unicode)', function(){
+    var result = bob.hey('\xfcML\xe4\xdcTS!');
+    expect(result).toEqual('Whoa, chill out!');
+  });
 
-  it('should respond "Whatever" when calmly spoken to with umlauts');
+  it('should respond "Whatever" when calmly spoken to with umlauts', function(){
+    var result = bob.hey('\xfcML\xe4\xdcTS');
+    expect(result).toEqual('Whatever.');
+  });
 
-  it('should respond "Whoa, chill out!" when spoken to in only caps but no exclamation mark');
+  it('should respond "Whoa, chill out!" when spoken to in only caps but no exclamation mark', function(){
+    var result = bob.hey('CAN YOU TAKE OUT THE TRASH?');
+    expect(result).toEqual('Whoa, chill out!');
+  });
 
-  it('should respond with "Whatever" when given an assertion containing but not ending in a question');
+  it('should respond with "Whatever" when given an assertion containing but not ending in a question', function(){
+    var result = bob.hey('Hello? Hey you, do your homework.');
+    expect(result).toEqual('Whatever.');
+  });
 
-  it('should agree when several statements are spoken to him and the last one is a question');
+  it('should agree when several statements are spoken to him and the last one is a question', function(){
+    var result = bob.hey('Hello! What is your name?');
+    expect(result).toEqual('Sure.');
+  });
 
-  it('should be indignant when not spoken to');
+  it('should be indignant when not spoken to', function(){
+    var result = bob.hey('');
+    expect(result).toEqual('Fine. Be that way!');
+  });
 
-  it('should be indignant when spoken to with prolonged silence (multiple spaces)');
+  it('should be indignant when spoken to with prolonged silence (multiple spaces)', function(){
+    var result = bob.hey('         ');
+    expect(result).toEqual('Fine. Be that way!');
+  });
 
   /**
    * Are there more tests you can think of that would push the limits of

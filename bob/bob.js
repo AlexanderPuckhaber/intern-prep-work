@@ -4,17 +4,27 @@ var Bob = function() {
     this.hey = function(inputSpeech) {
         let inputSpeechType = 'normal'; //default
         //checks if inputSpeech is a question
-        if (inputSpeech.charAt(inputSpeech.length) == '?'){
+        if (inputSpeech.charAt(inputSpeech.length - 1) == '?'){
             inputSpeechType = 'question';
         }
-        //if inputSpeech is in all caps (yell) (overrides question)
-        if (inputSpeech === inputSpeech.toUpperCase()) {
+        //if inputSpeech is a yell (ends in '!')
+        if (inputSpeech.charAt(inputSpeech.length - 1) == '!') {
+            inputSpeechType = 'yell';
+        }
+        //also in all caps (as long as there are no numbers)
+        let containsNumbers = false;
+        for (let i = 0; i < inputSpeech.length; i++){
+            if (parseInt(inputSpeech.charAt(i)) > -1)
+                containsNumbers = true;
+        }
+        if (!containsNumbers && inputSpeech === inputSpeech.toUpperCase()){
             inputSpeechType = 'yell';
         }
         //checks to see if inputSpeech is all spaces
         let isAllSpaces = true;
-        for (char in inputSpeech){
-            if (char != ' ')
+        for (let i = 0; i < inputSpeech.length; i++){
+            letter = inputSpeech.charAt(i);
+            if (letter != ' ')
                 isAllSpaces = false;
         }
         if (isAllSpaces){
