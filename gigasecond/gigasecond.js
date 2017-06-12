@@ -17,7 +17,7 @@ var Gigasecond = function (inputDate){
     if (inputDate.getTime() > 0)
         newDate.setSeconds(inputDate.getSeconds() + GigasecondValue);
     else
-        newDate.setSeconds(GigasecondValue - inputDate.getSeconds());
+        newDate.setSeconds(GigasecondValue + inputDate.getSeconds() - 3600);    //subtract one hour for some reason...
 
     this.date = function(){
         return newDate;
