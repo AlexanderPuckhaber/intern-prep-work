@@ -10,7 +10,8 @@ var Gigasecond = function (inputDate){
     const GigasecondValue = 1000000000;
 
     //creates another date object that is one billion seconds older
-    let newDate = new Date(inputDate.getFullYear(), inputDate.getMonth(), inputDate.getDay());
+    //let newDate = new Date(inputDate.getFullYear(), inputDate.getMonth(), inputDate.getDay(), inputDate.get);
+    let newDate = new Date(inputDate.getTime());
 
     //if inputDate is positive (1970 or later)
     if (inputDate.getTime() > 0)
