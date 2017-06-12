@@ -3,9 +3,15 @@ var Bob = require('./bob.js');
 describe('Bob', function () {
   var bob = new Bob();
 
-  it('should respond "Whatever" when something is stated at him');
+  it('should respond "Whatever" when something is stated at him', function(){
+    var result = bob.hey('take out the trash');
+    expect(result).toEqual('Whatever.');
+  });
 
-  it('should response "Whoa, chill out!" when shouted at');
+  it('should response "Whoa, chill out!" when shouted at', function(){
+    var result = bob.hey('YELLING!');
+    expect(result).toEqual('Whoa, chill out!');
+  });
 
   it('should agree with "Sure" when asked a question');
 
