@@ -1,8 +1,8 @@
-var Gigasecond = function (inputDate){
+var Gigasecond = function (inputDate) {
 
     //creates large number (1 billion)
     let tmpBillion = 1;
-    for (let i = 0; i < 9; i++){
+    for (let i = 0; i < 9; i++) {
         tmpBillion *= 10;
     }
     //creates gigasecond constant
@@ -17,9 +17,9 @@ var Gigasecond = function (inputDate){
     if (inputDate.getTime() > 0)
         newDate.setSeconds(inputDate.getSeconds() + GigasecondValue);
     else
-        newDate.setSeconds(GigasecondValue + inputDate.getSeconds() - 3600);    //subtract one hour for some reason...
+        newDate.setSeconds(GigasecondValue + inputDate.getSeconds() - 3600); //subtract one hour for some reason...
 
-    this.date = function(){
+    this.date = function () {
         return newDate;
     }
 };

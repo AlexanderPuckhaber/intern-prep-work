@@ -36,8 +36,7 @@ var PhoneNumber = function (newNumber) {
                 //if the last 2 characters weren't ") ", throw out the data!
                 if (tmp == " " && (i > 0 && inputPhoneNumber.charAt(i - 1) == ")")) {
                     //everything is fine, the last two seperators were ") "
-                }
-                else {
+                } else {
                     //exit loop
                     i = inputPhoneNumber.length;
                     //make phone number null
@@ -46,14 +45,13 @@ var PhoneNumber = function (newNumber) {
             }
         }
     }
-    
+
     //checks the length of the phone number to see if it is valid
     //Length needs to be between 10 and 11
     if (unformattedNumber.length > 11 || unformattedNumber.length < 10) {
         //number is a null value (10 zeroes)
         unformattedNumber = "0000000000";
-    }
-    else {
+    } else {
         //darn, the phone number is valid. more needs to be done...
 
         //checks to see if the phone number has 11 digits, in which case the first digit (hopefully 1) is removed
@@ -74,10 +72,10 @@ var PhoneNumber = function (newNumber) {
     //else, do nothing
 
     //ok, we should probably check to see if the first and fourth digits of the phone number are between 2-9
-    if (parseInt(unformattedNumber.charAt(0)) < 2 /*above 9 was checked initially*/) {
+    if (parseInt(unformattedNumber.charAt(0)) < 2 /*above 9 was checked initially*/ ) {
         //print("Area code of " + unformattedNumber + " begins with 0 or 1!")
     }
-    if (parseInt(unformattedNumber.charAt(3)) < 2 /*above 9 was checked initially*/) {
+    if (parseInt(unformattedNumber.charAt(3)) < 2 /*above 9 was checked initially*/ ) {
         //print("Exchange code of " + unformattedNumber + " begins with 0 or 1!")
     }
 

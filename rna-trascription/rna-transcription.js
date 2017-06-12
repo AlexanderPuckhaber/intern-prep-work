@@ -1,10 +1,10 @@
-var DnaTranscriber = function() {
+var DnaTranscriber = function () {
 
-    this.toRna = function(inputDna){
+    this.toRna = function (inputDna) {
 
         let outputRna = '';
 
-        for (let i = 0; i < inputDna.length; i++){
+        for (let i = 0; i < inputDna.length; i++) {
             letter = inputDna.charAt(i);
 
             if (letter === 'G')
